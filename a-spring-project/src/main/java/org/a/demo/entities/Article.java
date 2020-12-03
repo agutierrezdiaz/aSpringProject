@@ -7,6 +7,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
  * Entity class for the content type Article
+ * 
  * @author Adrian Gutierrez
  *
  */
@@ -19,13 +20,14 @@ public class Article {
 	private String summary;
 	private Date publishDate;
 	private String author;
+	private String image;
 
-	public Article() {}
+	public Article() {
+	}
 
-	public Article(String title, String summary, Date publishDate, String author) {
+	public Article(String title, Date publishDate, String author) {
 		super();
 		this.title = title;
-		this.summary = summary;
 		this.publishDate = publishDate;
 		this.author = author;
 	}
@@ -68,6 +70,14 @@ public class Article {
 
 	public void setAuthor(String author) {
 		this.author = author;
+	}
+
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
 	}
 
 	@Override

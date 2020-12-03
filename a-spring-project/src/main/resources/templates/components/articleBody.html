@@ -1,0 +1,23 @@
+<section th:fragment="detail">
+	<div class="a-project-head" th:style="'background-image: url('+${article.image}+');'">
+		<div class="container">
+			<h1 th:text="${article.title}"></h1>
+		</div>
+	</div>
+	<div class="b-subnavbar pt-3 pb-1">
+	<div class="container">
+<!-- 		<p class="text-justify font-weight-normal" th:text="${article.subtitle}"></p> -->
+		<p class="text-secondary font-italic font-weight-light"
+			th:text="${#dates.format(article.publishDate, 'dd/MM/yyyy')}"></p>
+	</div>
+	</div>
+	<div class="container">
+		<p th:text="${article.summary}"></p>
+<!-- 		<th:block th:each="item : ${article.summary}"> -->
+<!-- 			<th:block th:switch="${item.getClassType()}"> -->
+<!-- 				<p th:case="SummaryText" class="text-justify font-weight-light p-5" th:text="${item.text}"></p> -->
+<!-- 				<h3 th:case="SummaryTitle" th:text="${item.text}"></h3> -->
+<!-- 			</th:block> -->
+<!-- 		</th:block> -->
+	</div>
+</section>

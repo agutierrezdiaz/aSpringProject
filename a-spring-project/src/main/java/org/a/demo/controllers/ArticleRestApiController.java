@@ -24,10 +24,10 @@ import org.springframework.web.bind.annotation.RestController;
  *
  */
 @RestController
-@RequestMapping("/admin/articles")
-public class ArticleController {
+@RequestMapping("/api/articles")
+public class ArticleRestApiController {
 
-	private static final Logger log = LoggerFactory.getLogger(ArticleController.class);
+	private static final Logger log = LoggerFactory.getLogger(ArticleRestApiController.class);
 
 	@Autowired
 	private ArticleService service;

@@ -1,0 +1,34 @@
+<div th:fragment="articleList" class="album py-5 bg-light">
+	<div class="container">
+		<div class="row">
+			<div th:each="article: ${contentList}" class="col-md-4">
+				<div class="card mb-4 shadow-sm">
+					<img th:src="${article.image}" class="img-fluid">
+<!-- 					<svg class="bd-placeholder-img card-img-top" width="100%" -->
+<!-- 						height="225" xmlns="http://www.w3.org/2000/svg" -->
+<!-- 						preserveAspectRatio="xMidYMid slice" focusable="false" role="img" -->
+<!-- 						aria-label="Placeholder: Thumbnail" > -->
+<!-- 						<title th:text="${article.title}"></title> -->
+<!-- 						<rect width="100%" height="100%" fill="#55595c" th:src="${article.image}" /> -->
+<!-- 						<text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg> -->
+					<div class="card-body">
+						<p class="card-text" th:text="${article.title}"></p>
+						<div class="d-flex justify-content-between align-items-center">
+							<div class="btn-group">
+								<a type="button" class="btn btn-sm btn-outline-secondary"
+									th:href="@{/article/} + ${article.id}">View</a>
+							</div>
+							<small class="text-muted"
+								th:text="${#dates.format(article.publishDate, 'dd/MM/yyyy')}"></small>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col">
+				<div th:replace="areas/pagination :: pagination"></div>
+			</div>
+		</div>
+	</div>
+</div>

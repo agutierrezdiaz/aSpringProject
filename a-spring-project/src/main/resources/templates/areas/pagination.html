@@ -1,0 +1,31 @@
+<nav th:fragment="pagination" aria-label="Page navigation">
+	<ul th:if="${contentList.totalPages != null}"
+		class="pagination justify-content-center">
+		<li class="page-item" th:classappend="${contentList.first} ? disabled">
+			<a class="page-link" th:href="@{${#httpServletRequest.requestURI}(page=0)}" aria-disabled="true">&lt;&lt;</a>
+		</li>
+		<li class="page-item" th:classappend="${contentList.first} ? disabled">
+			<a class="page-link" aria-disabled="true"
+				th:href="@{${#httpServletRequest.requestURI}(page=${contentList.number < 1 ? 0 : contentList.number - 1})}">&lt;</a>
+		</li>
+		<li th:if="${contentList.number > 2}" class="page-item disabled">
+			<a class="page-link" aria-disabled="true" href="#">...</a>
+		</li>
+		<li class="page-item" th:classappend="${index == contentList.number} ? 'active'"
+			th:each="index : ${#numbers.sequence(contentList.number <= 2 ? 0 : contentList.number - 2, contentList.number + 2 > contentList.totalPages - 1 ? contentList.totalPages - 1 : contentList.number + 2, 1)}">
+			<a class="page-link" th:href="@{${#httpServletRequest.requestURI}(page=${index})}"
+				th:text="${index + 1}"></a>
+		</li>
+		<li th:if="${contentList.number < contentList.totalPages - 3}" class="page-item disabled">
+			<a class="page-link" aria-disabled="true" href="#">...</a>
+		</li>
+		<li class="page-item" th:classappend="${contentList.last} ? disabled">
+			<a class="page-link"
+				th:href="@{${#httpServletRequest.requestURI}(page=${contentList.number + 1 == contentList.totalPages ? contentList.number : contentList.number + 1})}">&gt;</a>
+		</li>
+		<li class="page-item" th:classappend="${contentList.last} ? disabled">
+			<a class="page-link"
+				th:href="@{${#httpServletRequest.requestURI}(page=${contentList.totalPages - 1})}">&gt;&gt;</a>
+		</li>
+	</ul>
+</nav>

@@ -1,0 +1,79 @@
+body {
+	min-height: 100vh;
+}
+
+main {
+	margin-top: 50px;
+	flex: 1;
+}
+
+.a-project-head {
+	position: relative;
+	padding: 5rem 0 5rem;
+	font-weight: 300;
+/* 	color: #cdbfe3; */
+	color: #88d7ef;
+	text-align: center;
+/* 	text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1); */
+	text-shadow: 0 2px 3px #2d3c4c;
+	/* 	background-image: linear-gradient(#561946, #ad4343); */
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.a-project-head p {
+	font-size: 1.25rem;
+	max-width: 640px;
+	margin: 0 auto;
+}
+
+.a-project-head a {
+	font-color: #fff;
+}
+
+.b-subnavbar {
+	background-color: rgba(255, 255, 255, 0.75);
+	box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.05), inset 0 -1px 0
+		rgba(0, 0, 0, 0.15);
+}
+
+.nav-danger {
+	/* 	background-color: #bd2130!important; */
+	background-color: #117a8b !important;
+}
+
+.jumbotron {
+	padding-top: 3rem;
+	padding-bottom: 3rem;
+	margin-bottom: 0;
+	background-color: #fff;
+}
+
+@media ( min-width : 768px) {
+	.jumbotron {
+		padding-top: 6rem;
+		padding-bottom: 6rem;
+	}
+}
+
+.jumbotron p:last-child {
+	margin-bottom: 0;
+}
+
+.jumbotron h1 {
+	font-weight: 300;
+}
+
+.jumbotron .container {
+	max-width: 40rem;
+}
+
+footer {
+	padding-top: 3rem;
+	padding-bottom: 3rem;
+}
+
+footer p {
+	margin-bottom: .25rem;
+}
