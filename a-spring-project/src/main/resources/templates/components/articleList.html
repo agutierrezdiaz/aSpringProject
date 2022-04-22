@@ -16,7 +16,7 @@
 						<div class="d-flex justify-content-between align-items-center">
 							<div class="btn-group">
 								<a type="button" class="btn btn-sm btn-outline-secondary"
-									th:href="@{/article/} + ${article.id}">View</a>
+									th:href="@{/articles/} + ${article.id}">View</a>
 							</div>
 							<small class="text-muted"
 								th:text="${#dates.format(article.publishDate, 'dd/MM/yyyy')}"></small>

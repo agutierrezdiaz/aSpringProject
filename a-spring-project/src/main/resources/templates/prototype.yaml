@@ -1,0 +1,11 @@
+--- 
+prototype: 
+  menu: 
+    - 
+      name: home
+      path: /
+      title: Home
+    - 
+      name: articles
+      path: /articles
+      title: Articles

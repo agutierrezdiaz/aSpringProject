@@ -8,11 +8,11 @@
 		</button>
 		<div class="collapse navbar-collapse" id="navbarCollapse">
 			<ul class="navbar-nav mr-auto">
-				<li class="nav-item"><a class="nav-link" href="#">Link</a></li>
-				<li class="nav-item"><a class="nav-link disabled" href="#"
-					tabindex="-1" aria-disabled="true">Disabled</a></li>
+				<li class="nav-item" th:each="menuItem : ${@prototypeProperties.menu}">
+					<a class="nav-link" th:href="@{${menuItem.path}}" th:text="#{${menuItem.title}}"></a>
+				</li>
 			</ul>
-			<a class="btn btn-info nav-link" href="#">Login</a>
+			<a class="btn btn-info nav-link" href="#" th:text="#{templates.areas.header.menu.login}"></a>
 		</div>
 	</nav>
 </header>

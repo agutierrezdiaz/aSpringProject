@@ -1,23 +1,37 @@
 <section th:fragment="detail">
-	<div class="a-project-head" th:style="'background-image: url('+${article.image}+');'">
+	<div class="a-project-head"
+		th:style="'background-image: url('+${article.image}+');'">
 		<div class="container">
 			<h1 th:text="${article.title}"></h1>
+			<h2 th:text="${article.subtitle}"></h2>
 		</div>
 	</div>
 	<div class="b-subnavbar pt-3 pb-1">
-	<div class="container">
-<!-- 		<p class="text-justify font-weight-normal" th:text="${article.subtitle}"></p> -->
-		<p class="text-secondary font-italic font-weight-light"
-			th:text="${#dates.format(article.publishDate, 'dd/MM/yyyy')}"></p>
+		<div class="container">
+			<p class="text-secondary font-italic font-weight-light"
+				th:text="${article.author} + ' - ' + ${#dates.format(article.publishDate, 'dd/MM/yyyy')}"></p>
+		</div>
 	</div>
-	</div>
-	<div class="container">
-		<p th:text="${article.summary}"></p>
-<!-- 		<th:block th:each="item : ${article.summary}"> -->
-<!-- 			<th:block th:switch="${item.getClassType()}"> -->
-<!-- 				<p th:case="SummaryText" class="text-justify font-weight-light p-5" th:text="${item.text}"></p> -->
-<!-- 				<h3 th:case="SummaryTitle" th:text="${item.text}"></h3> -->
-<!-- 			</th:block> -->
-<!-- 		</th:block> -->
+	<div class="container pt-3 pb-1 a-article-body">
+		<th:block th:each="item : ${article.summary}">
+			<th:block th:switch="${item.type}">
+				
+				<p th:case="text" class="text-justify font-weight-light"
+					th:text="${item.paragraph}"></p>
+				
+				<h3 th:case="title" th:text="${item.text}"></h3>
+				
+				<blockquote class="blockquote text-center" th:case="quote">
+					<p class="mb-0" th:text="${item.text}"></p>
+					<div class="blockquote-footer">
+						<cite th:text="${item.author}"></cite>
+					</div>
+				</blockquote>
+				
+				<img th:case="image" th:src="${item.image}"
+					class="img-fluid rounded mx-auto d-block mb-2">
+					
+			</th:block>
+		</th:block>
 	</div>
 </section>

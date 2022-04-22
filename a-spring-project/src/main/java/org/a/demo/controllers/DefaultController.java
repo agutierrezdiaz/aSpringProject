@@ -30,8 +30,17 @@ public class DefaultController {
 		model.addAttribute("contentList", articles);
 		return "main";
 	}
+	
+	@GetMapping("/articles")
+	public String getArticles(Model model, @RequestParam(value = "page", required = false, defaultValue = "0") int page,
+			@RequestParam(value = "size", required = false, defaultValue = "6") int size) {
+		Page<Article> articles = service.getArticles(page, size);
+		model.addAttribute("title", "aSpring Project");
+		model.addAttribute("contentList", articles);
+		return "articleList";
+	}
 
-	@GetMapping("/article/{id}")
+	@GetMapping("/articles/{id}")
 	public String getArticleDetail(Model model, @PathVariable("id") String id) {
 		Article article = service.getArticleById(id);
 		model.addAttribute("article", article);

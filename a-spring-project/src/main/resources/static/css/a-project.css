@@ -11,12 +11,9 @@ main {
 	position: relative;
 	padding: 5rem 0 5rem;
 	font-weight: 300;
-/* 	color: #cdbfe3; */
-	color: #88d7ef;
+	color: #ececec;
 	text-align: center;
-/* 	text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1); */
 	text-shadow: 0 2px 3px #2d3c4c;
-	/* 	background-image: linear-gradient(#561946, #ad4343); */
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -30,6 +27,10 @@ main {
 
 .a-project-head a {
 	font-color: #fff;
+}
+
+.a-article-body p {
+	font-size: 20px;
 }
 
 .b-subnavbar {
@@ -70,10 +71,15 @@ main {
 }
 
 footer {
-	padding-top: 3rem;
-	padding-bottom: 3rem;
+	padding-top: 2rem;
+	padding-bottom: 2rem;
+	background-color: #181e23;
 }
 
 footer p {
 	margin-bottom: .25rem;
+}
+
+footer p,a {
+	color: #17a2b8;
 }
